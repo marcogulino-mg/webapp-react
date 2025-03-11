@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // IMPORT Pages
 import Homepage from "./pages/Homepage";
 import Moviespage from "./pages/Moviespage";
+import Movie from "./pages/Movie";
 // Layouts
 import Layout from "./layouts/Baselayout";
-import Movie from "./components/subcomponents/Movies";
 
 function App() {
   return (

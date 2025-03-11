@@ -1,14 +1,14 @@
 // IMPORT Components
-import Movie from "./Movies";
+import Moviecard from "./Moviecard";
 
 export default function Movieslist() {
   return (
     <div className="movies-list">
-      <Movie />
-      <Movie />
-      <Movie />
-      <Movie />
-      <Movie />
+      <Moviecard />
+      <Moviecard />
+      <Moviecard />
+      <Moviecard />
+      <Moviecard />
     </div>
   );
 }

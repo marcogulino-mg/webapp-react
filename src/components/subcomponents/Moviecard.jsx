@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-export default function Movie() {
+export default function Moviecard() {
   // Read ID from URL
   const { id } = useParams();
 

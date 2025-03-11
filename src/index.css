@@ -79,13 +79,13 @@ header {
 /* MAIN */
 main {
   height: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* MOVIESPAGE */
 .movies-page {
-  margin-top: 20px;
+  max-width: 1250px;
+  margin: 20px auto;
 }
 
 .movies-page > h3 {
@@ -98,7 +98,8 @@ main {
 .movies-list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1100px;
+  max-width: 1250px;
+  margin: 0 auto;
   gap: 20px;
 }
 
@@ -127,6 +128,56 @@ main {
 
 .movie-card > button {
   width: 110px;
+}
+
+/* MOVIE */
+.movie-details {
+  margin: 20px auto;
+  max-width: 1250px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.details h3 {
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.details span {
+  font-style: italic;
+  color: rgb(147, 147, 147);
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.movie-details > h3 {
+  margin: 10px 0 25px 0;
+}
+
+.review-card {
+  padding: 15px 15px 40px 15px;
+  margin-bottom: 20px;
+  border: solid 1px rgb(210, 212, 213);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card > h4 {
+  margin-bottom: 20px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: solid 1px rgb(210, 212, 213);
+  border-radius: 6px;
+  gap: 3px;
 }
 
 /* FOOTER */
