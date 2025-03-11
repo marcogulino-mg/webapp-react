@@ -5,6 +5,10 @@ export default function Movieslist() {
   return (
     <div className="movies-list">
       <Movie />
+      <Movie />
+      <Movie />
+      <Movie />
+      <Movie />
     </div>
   );
 }

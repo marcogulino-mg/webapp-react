@@ -6,6 +6,7 @@ import Homepage from "./pages/Homepage";
 import Moviespage from "./pages/Moviespage";
 // Layouts
 import Layout from "./layouts/Baselayout";
+import Movie from "./components/subcomponents/Movies";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route Component={Layout}>
           <Route path="/" Component={Homepage} />
           <Route path="/movies" Component={Moviespage} />
+          <Route path="/movies/:id" Component={Movie} />
         </Route>
       </Routes>
     </BrowserRouter>
