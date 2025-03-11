@@ -26,13 +26,13 @@ a:hover {
 
 body {
   display: flex;
-  min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 1.8em;
   line-height: 1.1;
+  padding: 20px;
 }
 
 button {
@@ -52,4 +52,16 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+#root {
+  width: 100%;
+}
+
+/* HEADER */
+header {
+  height: 50px;
+  background-color: rgb(210, 212, 213);
+  display: flex;
+  align-items: center;
 }
