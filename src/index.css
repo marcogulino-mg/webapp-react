@@ -57,6 +57,9 @@ button:focus-visible {
 
 #root {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* HEADER */
@@ -67,9 +70,16 @@ header {
   align-items: center;
 }
 
+/* MAIN */
+main {
+  height: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 /* FOOTER */
 footer {
-  height: 50px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: end;
