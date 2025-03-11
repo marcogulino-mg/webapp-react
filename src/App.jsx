@@ -4,13 +4,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // IMPORT Pages
 import Homepage from "./pages/Homepage";
 import Movieslist from "./pages/Movieslist";
+// Layouts
+import Layout from "./layouts/Baselayout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" Component={Homepage} />
-        <Route path="/movies" Component={Movieslist} />
+        <Route Component={Layout}>
+          <Route path="/" Component={Homepage} />
+          <Route path="/movies" Component={Movieslist} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
