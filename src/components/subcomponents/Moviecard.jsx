@@ -1,11 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function Moviecard(props) {
-  // Read ID from URL
-  const { ID } = useParams();
-
   // Movie Object Destruct.
-  const { title, director, image, abstract } = props.movieProps;
+  const { id, title, director, image, abstract } = props.movieProps;
 
   return (
     <div className="movie-card">
@@ -21,7 +18,9 @@ export default function Moviecard(props) {
       <h3>{title}</h3>
       <span>{director}</span>
       <p>{abstract}</p>
-      <button>See More</button>
+      <Link to={`/movies/${id}`}>
+        <button>See More</button>
+      </Link>
     </div>
   );
 }

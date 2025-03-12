@@ -107,7 +107,7 @@ main {
 .movie-card {
   border: solid 1px rgb(210, 212, 213);
   width: 350px;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
