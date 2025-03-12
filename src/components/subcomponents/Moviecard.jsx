@@ -1,24 +1,26 @@
 import { useParams } from "react-router-dom";
 
-export default function Moviecard() {
+export default function Moviecard(props) {
   // Read ID from URL
-  const { id } = useParams();
+  const { ID } = useParams();
+
+  // Movie Object Destruct.
+  const { title, director, image, abstract } = props.movieProps;
 
   return (
     <div className="movie-card">
       <img
-        src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
-        alt="movie image"
+        src={
+          image
+            ? image
+            : "https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
+        }
+        alt={title}
         className="movie-img"
       />
-      <h3>Title Card</h3>
-      <span>Director Name</span>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quia
-        quidem totam! Necessitatibus quam hic similique officia doloribus?
-        Temporibus consectetur nisi deleniti accusamus amet velit nostrum alias
-        et soluta sint!
-      </p>
+      <h3>{title}</h3>
+      <span>{director}</span>
+      <p>{abstract}</p>
       <button>See More</button>
     </div>
   );
