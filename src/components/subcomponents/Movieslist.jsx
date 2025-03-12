@@ -22,7 +22,7 @@ export default function Movieslist() {
   return (
     <div className="movies-list">
       {movies.map((movie) => (
-        <Moviecard key={movie.id} movieProps={movie} />
+        <Moviecard key={movie.id} moviesProps={movie} />
       ))}
     </div>
   );

@@ -1,33 +1,52 @@
 // IMPORT Components
-import Review from "../components/subcomponents/Review";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+// IMPORT Components
+import Review from "../components/subcomponents/Review";
 
 export default function Movie() {
+  // ID Movie
+  const { id } = useParams();
+  // State Var filled with a single Movie from API Call
+  const [movie, setMovie] = useState({});
+
+  // Function for Axios Call
+  function fetchMovie() {
+    axios
+      .get(`http://localhost:3000/movies/${id}`)
+      .then((res) => setMovie(res.data))
+      .catch((err) => console.log(err));
+  }
+
+  useEffect(() => fetchMovie, []);
+
   return (
     <>
       <div className="movie-details">
         <div className="details">
           <img
-            src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
-            alt="movie image"
-            className="movie-img"
+            src={
+              movie.image
+                ? movie.image
+                : "https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
+            }
+            alt={movie.title}
+            className="details-img"
           />
           <div>
-            <h3>Title Card</h3>
-            <span>Director Name</span>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quia
-              quidem totam! Necessitatibus quam hic similique officia doloribus?
-              Temporibus consectetur nisi deleniti accusamus amet velit nostrum
-              alias et soluta sint!
-            </p>
+            <h3>{movie.title}</h3>
+            <span>{movie.director}</span>
+            <p>{movie.abstract}</p>
           </div>
         </div>
         <hr />
         <h3>Our community reviews</h3>
-        <Review />
-        <Review />
-        <Review />
+        {/* Reviews List */}
+        {movie.reviews?.map((review) => (
+          <Review key={review.id} movieProps={review} />
+        ))}
         <div className="container mt-4">
           <h4>Add your review</h4>
           <div className="card p-3">

@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 
 export default function Moviecard(props) {
   // Movie Object Destruct.
-  const { id, title, director, image, abstract } = props.movieProps;
+  const { id, title, director, image, abstract } = props.moviesProps;
 
   return (
     <div className="movie-card">

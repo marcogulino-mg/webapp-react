@@ -1,9 +1,11 @@
-export default function Review() {
+export default function Review(props) {
+  const { name, vote, text } = props.movieProps;
+
   return (
     <div className="review-card">
-      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-      <span>Vote *****</span>
-      <span>By Alice</span>
+      <h4>{text}</h4>
+      <span>Vote {vote}</span>
+      <span>By {name}</span>
     </div>
   );
 }
