@@ -1,6 +1,6 @@
 // IMPORT Components
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { redirect, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 // IMPORT Components
@@ -11,13 +11,18 @@ export default function Movie() {
   const { id } = useParams();
   // State Var filled with a single Movie from API Call
   const [movie, setMovie] = useState({});
+  // Redirect
+  const redirect = useNavigate();
 
   // Function for Axios Call
   function fetchMovie() {
     axios
       .get(`http://localhost:3000/movies/${id}`)
       .then((res) => setMovie(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        if (err.status === 404) redirect("/*");
+      });
   }
 
   useEffect(() => fetchMovie, []);

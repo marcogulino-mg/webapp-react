@@ -5,7 +5,7 @@ export default function Review(props) {
     <div className="review-card">
       <h4>{text}</h4>
       <span>Vote {vote}</span>
-      <span>By {name}</span>
+      <span>By {name || "Anonymous"}</span>
     </div>
   );
 }

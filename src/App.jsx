@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import './App.css'
 // IMPORT Pages
 import Homepage from "./pages/Homepage";
 import Moviespage from "./pages/Moviespage";
 import Movie from "./pages/Movie";
+import Notfound from "./pages/Notfound";
 // Layouts
 import Layout from "./layouts/Baselayout";
 
@@ -16,6 +15,7 @@ function App() {
           <Route index Component={Homepage} />
           <Route path="/movies" Component={Moviespage} />
           <Route path="/movies/:id" Component={Movie} />
+          <Route path="*" Component={Notfound} />
         </Route>
       </Routes>
     </BrowserRouter>

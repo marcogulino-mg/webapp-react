@@ -190,3 +190,10 @@ footer {
   align-items: center;
   justify-content: end;
 }
+
+/* NOT FOUND PAGE */
+.error-404 {
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+}
