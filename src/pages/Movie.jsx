@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { redirect, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
 // IMPORT Components
 import Review from "../components/subcomponents/Review";
 import Formreview from "../components/subcomponents/Formreview";
