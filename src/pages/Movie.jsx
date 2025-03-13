@@ -51,7 +51,7 @@ export default function Movie() {
         {movie.reviews?.map((review) => (
           <Review key={review.id} movieProps={review} />
         ))}
-        <Formreview />
+        <Formreview idMovie={id} />
       </div>
     </>
   );
