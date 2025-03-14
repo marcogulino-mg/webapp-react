@@ -1,9 +1,10 @@
+// IMPORT Components
+import Formmovie from "../components/subcomponents/Formmovie.jsx";
+
 export default function Addmovie(){
     return (
-        <div>
-            <h2>
-               Add Movie page
-            </h2>
-        </div>
+        <>
+            <Formmovie />
+        </>
     )
 }
