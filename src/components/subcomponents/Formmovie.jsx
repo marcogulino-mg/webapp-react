@@ -24,7 +24,6 @@ export default function Formmovie () {
         const { value, name } = e.target;
         if(name === "image") setAddMovie((currentMovie) => ({...currentMovie, image: e.target.files[0]}));
         else setAddMovie((currentMovie) => ({...currentMovie, [name]: value}));
-        console.log(e.target.files[0]);
     }
 
     // HandleSubmit
