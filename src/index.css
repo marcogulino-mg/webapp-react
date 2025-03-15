@@ -20,8 +20,20 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
+}
+
+.link {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 body {
@@ -33,6 +45,7 @@ h1 {
   font-size: 1.8em;
   line-height: 1.1;
   padding: 20px;
+  text-decoration: none;
 }
 
 h2 {
@@ -44,7 +57,7 @@ h2 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.4em 1em;
   margin-right: 20px;
   font-size: 1em;
   font-weight: 500;
@@ -70,10 +83,14 @@ button:focus-visible {
 
 /* HEADER */
 header {
-  height: 50px;
+  height: 70px;
   background-color: rgb(210, 212, 213);
   display: flex;
   align-items: center;
+}
+
+.headerMenu {
+    background-color: rgb(48, 182, 245);
 }
 
 /* MAIN */
