@@ -32,7 +32,7 @@ export default function Movie() {
     if (!reviews || reviews.length === 0) return "No votes yet";
 
     const totalVotes = reviews.reduce((acc, review) => acc + review.vote, 0);
-    return (totalVotes / reviews.length).toFixed(1);
+    return parseFloat((totalVotes / reviews.length).toFixed(1));
   }
 
   // Function that converts average votes in stars
@@ -41,9 +41,10 @@ export default function Movie() {
     let tagsIcon = [];
     let i = 0
 
+    if (numStars === "No votes yet") return numStars;
+
     for (i; i < Math.floor(numStars); i++) {
       tagsIcon.push(<FontAwesomeIcon key={i} className="stars" icon={faStar} />)
-      console.log(i);
     }
     if (numStars % 1 !== 0) tagsIcon.push(<FontAwesomeIcon key={i} className="stars clip-stars" icon={faStar} />)
 
