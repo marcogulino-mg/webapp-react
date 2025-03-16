@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 import axios from "axios";
 // IMPORT Components
 import Review from "../components/subcomponents/Review";
@@ -24,6 +27,29 @@ export default function Movie() {
       });
   }
 
+  // Function for Average Votes Calc
+  function calculateAverageVote(reviews) {
+    if (!reviews || reviews.length === 0) return "No votes yet";
+
+    const totalVotes = reviews.reduce((acc, review) => acc + review.vote, 0);
+    return (totalVotes / reviews.length).toFixed(1);
+  }
+
+  // Function that converts average votes in stars
+  function numToStars() {
+    const numStars = calculateAverageVote(movie.reviews);
+    let tagsIcon = [];
+    let i = 0
+
+    for (i; i < Math.floor(numStars); i++) {
+      tagsIcon.push(<FontAwesomeIcon key={i} className="stars" icon={faStar} />)
+      console.log(i);
+    }
+    if (numStars % 1 !== 0) tagsIcon.push(<FontAwesomeIcon key={i} className="stars clip-stars" icon={faStar} />)
+
+    return tagsIcon;
+  }
+
   useEffect(() => fetchMovie, []);
 
   return (
@@ -46,7 +72,10 @@ export default function Movie() {
           </div>
         </div>
         <hr />
-        <h3>Our community reviews</h3>
+        <div className="vote-average">
+          <h3>Our community reviews</h3>
+          <h3>Average Vote: { numToStars() < 1 ? "No Reviews Available" : numToStars() }</h3>
+        </div>
         {/* Reviews List */}
         {movie.reviews?.map((review) => (
           <Review key={review.id} movieProps={review} />

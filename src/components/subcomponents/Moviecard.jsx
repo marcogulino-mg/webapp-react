@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Moviecard(props) {
   // Movie Object Destruct.

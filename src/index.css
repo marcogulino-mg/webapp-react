@@ -191,6 +191,21 @@ main {
   margin-bottom: 20px;
 }
 
+.vote-average{
+  display: flex;
+  justify-content: space-between;
+}
+
+.stars{
+  color: rgb(255, 245, 62);
+  stroke: rgb(0, 0, 0);
+  stroke-width: 21px;
+}
+
+.clip-stars {
+  clip-path: inset(0 50% 0 0);
+}
+
 .review-form {
   display: flex;
   flex-direction: column;
